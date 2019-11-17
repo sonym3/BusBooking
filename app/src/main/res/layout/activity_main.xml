@@ -34,13 +34,14 @@
         android:gravity="center_horizontal"
         android:layout_gravity="center"
         android:inputType="textEmailAddress"
-        android:textColorHint="#FFF" />
+        android:textColorHint="#DAD2D2"
+         />
 
     <EditText
         android:id="@+id/loginPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColorHint="#FFF"
+        android:textColorHint="#DAD2D2"
         android:layout_gravity="center"
         android:singleLine="true"
         android:layout_centerInParent="true"

@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,7 +28,7 @@ public class Dashboard extends AppCompatActivity {
 
     Spinner from,to,time,count;
     private Button search;
-    private EditText dateSlot;
+    private TextView dateSlot;
     private int mYear, mMonth, mDay;
     final Calendar defaultMaxDate = Calendar.getInstance(Locale.getDefault());
     @Override
@@ -40,7 +41,7 @@ public class Dashboard extends AppCompatActivity {
       //  time=(Spinner)findViewById(R.id.timeOfTravel);
         count=(Spinner)findViewById(R.id.numberOfPeople);
         search=(Button) findViewById(R.id.btnSearch);
-        dateSlot=(EditText)findViewById(R.id.pickDate);
+        dateSlot=(TextView) findViewById(R.id.pickDate);
 
         defaultMaxDate.set(2019, Calendar.NOVEMBER, 30);
 
