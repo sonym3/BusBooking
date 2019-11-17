@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Dashboard">
+<TextView
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Leaving from"/>
+    <Spinner
+        android:id="@+id/leavingFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/destination_arrays"
+        android:prompt="@string/destination_prompt" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Going to"/>
+
+    <Spinner
+        android:id="@+id/goingTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/destination_arrays"
+        android:prompt="@string/destination_prompt" />
+
+
+    <EditText
+          android:id="@+id/pickDate"
+          android:hint="Pick a date"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"  />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Desired Time"/>
+
+    <Spinner
+        android:id="@+id/timeOfTravel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/time"
+        android:prompt="@string/pick_time" />
+    <TextView
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Number of people"/>
+    <Spinner
+        android:id="@+id/numberOfPeople"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/count"
+        android:prompt="@string/number_of_people" />
+
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Search" />
+
+
+</LinearLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "620805617559",
+    "firebase_url": "https://grayhound-c50c9.firebaseio.com",
+    "project_id": "grayhound-c50c9",
+    "storage_bucket": "grayhound-c50c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:620805617559:android:0fa29fe6e6c541812bf6d2",
+        "android_client_info": {
+          "package_name": "com.example.grayhound"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "620805617559-i7pmlslepndjnjmhis5p5tihacqrcbjq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.grayhound",
+            "certificate_hash": "97474aae9bf657e42b6eb9df0c134ba603cf2b64"
+          }
+        },
+        {
+          "client_id": "620805617559-j9st193loq7msbctpl7hrorfp8vqo231.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDN5ZOSUmtQph2qYO2tlMk0Ltpyw1h1Ca8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "620805617559-j9st193loq7msbctpl7hrorfp8vqo231.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

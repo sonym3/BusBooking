@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">grayhound</string>
+
+    <string name="destination_prompt">Choose your destination</string>
+
+    <string-array name="destination_arrays">
+        <item>Ottawa</item>
+        <item>Quebec City</item>
+        <item>Toronto</item>
+        <item>Kingston</item>
+        <item>Sherbrooke</item>
+        <item>Trois-Rivières</item>
+        <item>Sudbury</item>
+        <item>Niagra</item>
+    </string-array>
+
+    <string name="pick_time">Pick your time</string>
+
+    <string-array name="time">
+        <item>Morning</item>
+        <item>Noon</item>
+        <item>Evening</item>
+        <item>Night</item>
+    </string-array>
+
+
+    <string name="number_of_people">Number of people</string>
+
+    <string-array name="count">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+
+</resources>
