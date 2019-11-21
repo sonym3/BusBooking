@@ -114,23 +114,22 @@ public class Dashboard extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.logout:
-                getLost();
             case R.id.mbk:
-                getData();
+                getBookingDetails();
             default:
                 return super.onContextItemSelected(item);
         }
 
     }
 
-    private void getLost() {
+   /* private void getLost() {
         FirebaseAuth.getInstance().signOut();
+        System.out.println("singout Details");
         Intent intent = new Intent(Dashboard.this, MainActivity.class);
         startActivity(intent);
     }
-
-    private void getData() {
+*/
+    private void getBookingDetails() {
         Intent intent = new Intent(Dashboard.this, MyBooking.class);
         intent.putExtra("user",user);
         startActivity(intent);

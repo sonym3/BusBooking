@@ -83,6 +83,7 @@ public class SearchResult extends AppCompatActivity {
                 reference = FirebaseDatabase.getInstance().getReference();
                 reference.child(user.replace(".","")).child(bookingID).setValue(userx);
                 Intent intent = new Intent(SearchResult.this, ConfBooking.class);
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
