@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
-                String emailPerson, passwordPerson;
+                final String emailPerson, passwordPerson;
                 emailPerson = email.getText().toString();
                 passwordPerson = pwd.getText().toString();
 
@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                                     progressBar.setVisibility(View.GONE);
 
                                     Intent intent = new Intent(MainActivity.this, Dashboard.class);
+                                    intent.putExtra("user",emailPerson);
                                     startActivity(intent);
                                 }
                                 else {

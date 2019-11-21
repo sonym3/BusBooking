@@ -31,6 +31,8 @@ public class Dashboard extends AppCompatActivity {
     private TextView dateSlot;
     private int mYear, mMonth, mDay;
     final Calendar defaultMaxDate = Calendar.getInstance(Locale.getDefault());
+
+    String user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +45,8 @@ public class Dashboard extends AppCompatActivity {
         search=(Button) findViewById(R.id.btnSearch);
         dateSlot=(TextView) findViewById(R.id.pickDate);
 
+
+        user = getIntent().getExtras().getString("user");
         defaultMaxDate.set(2019, Calendar.NOVEMBER, 30);
 
         dateSlot.setOnClickListener(new View.OnClickListener() {
@@ -94,6 +98,7 @@ public class Dashboard extends AppCompatActivity {
                 intent.putExtra("date",dateSlot.getText().toString());
                // intent.putExtra("time",time.getSelectedItem().toString());
                 intent.putExtra("count",count.getSelectedItem().toString());
+                intent.putExtra("user",user);
                 startActivity(intent);
             }
         });
@@ -111,7 +116,8 @@ public class Dashboard extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.logout:
                 getLost();
-
+            case R.id.mbk:
+                getData();
             default:
                 return super.onContextItemSelected(item);
         }
@@ -121,6 +127,12 @@ public class Dashboard extends AppCompatActivity {
     private void getLost() {
         FirebaseAuth.getInstance().signOut();
         Intent intent = new Intent(Dashboard.this, MainActivity.class);
+        startActivity(intent);
+    }
+
+    private void getData() {
+        Intent intent = new Intent(Dashboard.this, MyBooking.class);
+        intent.putExtra("user",user);
         startActivity(intent);
     }
 

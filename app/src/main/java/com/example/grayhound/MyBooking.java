@@ -18,12 +18,14 @@ import com.google.firebase.database.FirebaseDatabase;
 public class MyBooking extends AppCompatActivity {
     private RecyclerView mBookingList;
     private DatabaseReference mBookingData;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_booking);
-
-        mBookingData= FirebaseDatabase.getInstance().getReference().child("comgooglefirebaseauthinternalzzl@28fc17e");
+        String user = getIntent().getExtras().getString("user");
+System.out.println(user);
+        mBookingData= FirebaseDatabase.getInstance().getReference().child("hi");
         mBookingData.keepSynced(true);
 
 

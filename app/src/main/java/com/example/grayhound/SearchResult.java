@@ -28,11 +28,12 @@ public class SearchResult extends AppCompatActivity {
     TextView from,to,date,time,count;
     Button confBooking;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
-
+        final String user = getIntent().getExtras().getString("user");
         from=(TextView)findViewById(R.id.searchResultFrom);
         to=(TextView)findViewById(R.id.searchResultTo);
         date=(TextView)findViewById(R.id.searchResultDate);
@@ -78,10 +79,9 @@ public class SearchResult extends AppCompatActivity {
                 int y = (int)(Math.random()*((100000-1)+1))+1;;
                 String bookingID=y+"";
 
-                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 DatabaseReference reference ;
                 reference = FirebaseDatabase.getInstance().getReference();
-                reference.child(user.toString().replace(".","")).child(bookingID).setValue(userx);
+                reference.child(user.replace(".","")).child(bookingID).setValue(userx);
                 Intent intent = new Intent(SearchResult.this, ConfBooking.class);
                 startActivity(intent);
             }
