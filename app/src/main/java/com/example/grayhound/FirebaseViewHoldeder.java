@@ -1,17 +1,20 @@
 package com.example.grayhound;
 
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class FirebaseViewHoldeder extends RecyclerView.ViewHolder {
-    public TextView from,to,date,start,end,money,count;
-
+    public TextView from,to,date,start,end,money,count,bookingID;
 
     public FirebaseViewHoldeder(@NonNull View itemView) {
         super(itemView);
+
+
+
 
         from = itemView.findViewById(R.id.rowFrom);
         to = itemView.findViewById(R.id.rowTo);
@@ -20,6 +23,7 @@ public class FirebaseViewHoldeder extends RecyclerView.ViewHolder {
         end = itemView.findViewById(R.id.rowEndTime);
         money = itemView.findViewById(R.id.rowMoney);
         count = itemView.findViewById(R.id.rowCount);
+        bookingID=itemView.findViewById(R.id.idd);
 
     }
 }

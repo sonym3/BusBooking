@@ -1,7 +1,7 @@
 package com.example.grayhound;
 
 public class Pojo {
-
+    private  String bookingID;
     private String from;
     private String to;
     private String date;
@@ -10,7 +10,8 @@ public class Pojo {
     private String reach;
     private String end;
 
-    public Pojo(String from, String to, String date, String money, String count, String reach, String end) {
+    public Pojo(String bookingID, String from, String to, String date, String money, String count, String reach, String end) {
+        this.bookingID = bookingID;
         this.from = from;
         this.to = to;
         this.date = date;
@@ -21,6 +22,14 @@ public class Pojo {
     }
 
     public Pojo() {
+    }
+
+    public String getBookingID() {
+        return bookingID;
+    }
+
+    public void setBookingID(String bookingID) {
+        this.bookingID = bookingID;
     }
 
     public String getFrom() {

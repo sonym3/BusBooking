@@ -25,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 public class SearchResult extends AppCompatActivity {
 
-    TextView from,to,date,time,count;
+    TextView from,to,date,timeslot1,timeslotEnd,count,money;
     Button confBooking;
 
 
@@ -55,29 +55,39 @@ public class SearchResult extends AppCompatActivity {
 
         final String value5 = getIntent().getExtras().getString("count");
         count.setText(value5);
+        final Booking userx = new Booking();
+        //userx.setBookingID();
+        userx.setFrom(value1);
+        userx.setTo(value2);
+        userx.setDate(value3);
+        userx.setCount(value5);
+        int random1 = (int)(Math.random()*((24-1)+1))+1;;
+        String start=random1+":00H";
 
+        userx.setStartTime(start);
+        int random2 = (int)(Math.random()*((24-random1+1)+1))+random1+1;
+        String end=random2+":00H";
+        userx.setReachTime(end);
+        int random3 = (int)(Math.random()*((100-20)+1))+20;;
+        String moneytotal=random3+"$";
+        userx.setMoney(moneytotal);
+
+
+        int y = (int)(Math.random()*((100000-1)+1))+1;;
+        final String bookingID=y+"";
+
+        timeslot1=(TextView)findViewById(R.id.timeSlotstart1);
+        timeslot1.setText(start);
+
+        timeslotEnd=(TextView)findViewById(R.id.timeSlotEnd1);
+        timeslotEnd.setText(end);
+
+        money =(TextView)findViewById(R.id.Price);
+        money.setText(moneytotal);
 
         confBooking.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Booking userx = new Booking();
-                //userx.setBookingID();
-                userx.setFrom(value1);
-                userx.setTo(value2);
-                userx.setDate(value3);
-                userx.setCount(value5);
-                int random1 = (int)(Math.random()*((24-1)+1))+1;;
-                String start=random1+"";
-
-                userx.setStartTime(start);
-                int random2 = (int)(Math.random()*((24-random1+1)+1))+random1+1;
-                String end=random2+"";
-                userx.setReachTime(end);
-                userx.setMoney("$25");
-
-
-                int y = (int)(Math.random()*((100000-1)+1))+1;;
-                String bookingID=y+"";
 
                 DatabaseReference reference ;
                 reference = FirebaseDatabase.getInstance().getReference();
