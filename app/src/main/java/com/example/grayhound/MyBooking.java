@@ -1,39 +1,77 @@
 package com.example.grayhound;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import java.util.ArrayList;
-
-
 public class MyBooking extends AppCompatActivity {
-
-    DatabaseReference db;
-    FirebaseHelper helper;
-    RecyclerView rv;
-    MyAdapter adapter;
+    private RecyclerView mBookingList;
+    private DatabaseReference mBookingData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_booking);
 
-        rv= (RecyclerView) findViewById(R.id.rv);
-        rv.setLayoutManager(new LinearLayoutManager(this));
-
-        db= FirebaseDatabase.getInstance().getReference();
-        helper=new FirebaseHelper(db);
+        mBookingData= FirebaseDatabase.getInstance().getReference().child("comgooglefirebaseauthinternalzzl@28fc17e");
+        mBookingData.keepSynced(true);
 
 
-        adapter=new MyAdapter(this,helper.retrieve());
-        rv.setAdapter(adapter);
+        mBookingList=(RecyclerView)findViewById(R.id.myRe);
+        mBookingList.setHasFixedSize(true);
+        mBookingList.setLayoutManager(new LinearLayoutManager(this));
 
     }
 
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+
+        FirebaseRecyclerOptions<Pojo> options =
+                new FirebaseRecyclerOptions.Builder<Pojo>()
+                        .setQuery(mBookingData, Pojo.class)
+                        .build();
+
+        FirebaseRecyclerAdapter<Pojo,PojoHolder> firebaseRecyclerAdapter=new FirebaseRecyclerAdapter<Pojo, PojoHolder>
+                (options) {
+            @Override
+            protected void onBindViewHolder(@NonNull PojoHolder pojoHolder, int i, @NonNull Pojo pojo) {
+
+                pojoHolder.setFrom(pojo.getFrom());
+            }
+
+            @NonNull
+            @Override
+            public PojoHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                return null;
+            }
+        };
+        mBookingList.setAdapter(firebaseRecyclerAdapter);
+    }
+
+    public static class PojoHolder extends RecyclerView.ViewHolder{
+        View mView;
+        public PojoHolder(View itemView){
+            super(itemView);
+            mView=itemView;
+        }
+
+        public void setFrom(String from){
+            TextView sFrom=(TextView)mView.findViewById(R.id.rowFrom);
+            sFrom.setText(from);
+
+        }
+    }
 }
