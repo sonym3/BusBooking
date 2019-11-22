@@ -74,8 +74,8 @@ public class MyBooking extends AppCompatActivity {
                 firebaseViewHoldeder.from.setText(pojo.getFrom());
                 firebaseViewHoldeder.to.setText(pojo.getTo());
                 firebaseViewHoldeder.date.setText(pojo.getDate());
-                firebaseViewHoldeder.start.setText(pojo.getReach());
-                firebaseViewHoldeder.end.setText(pojo.getEnd());
+                firebaseViewHoldeder.startTime.setText(pojo.getStartTime());
+                firebaseViewHoldeder.reachTime.setText(pojo.getReachTime());
                 firebaseViewHoldeder.count.setText(pojo.getCount());
                 firebaseViewHoldeder.money.setText(pojo.getMoney());
             }

@@ -56,7 +56,7 @@ public class SearchResult extends AppCompatActivity {
         final String value5 = getIntent().getExtras().getString("count");
         count.setText(value5);
         final Booking userx = new Booking();
-        //userx.setBookingID();
+
         userx.setFrom(value1);
         userx.setTo(value2);
         userx.setDate(value3);
@@ -76,6 +76,7 @@ public class SearchResult extends AppCompatActivity {
         int y = (int)(Math.random()*((100000-1)+1))+1;;
         final String bookingID=y+"";
 
+        userx.setBookingID(bookingID);
         timeslot1=(TextView)findViewById(R.id.timeSlotstart1);
         timeslot1.setText(start);
 
