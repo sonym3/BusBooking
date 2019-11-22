@@ -37,6 +37,7 @@ public class Dashboard extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        user = getIntent().getExtras().getString("user");
 
         from=(Spinner)findViewById(R.id.leavingFrom);
         to=(Spinner)findViewById(R.id.goingTo);
@@ -46,7 +47,7 @@ public class Dashboard extends AppCompatActivity {
         dateSlot=(TextView) findViewById(R.id.pickDate);
 
 
-        user = getIntent().getExtras().getString("user");
+
         defaultMaxDate.set(2019, Calendar.DECEMBER, 30);
 
         dateSlot.setOnClickListener(new View.OnClickListener() {

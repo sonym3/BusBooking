@@ -65,7 +65,7 @@ public class SearchResult extends AppCompatActivity {
         String start=random1+":00H";
 
         userx.setStartTime(start);
-        int random2 = (int)(Math.random()*((24-random1+1)+1))+random1+1;
+        int random2 = (int)(Math.random()*((24-(random1+1))+1))+(random1+1);
         String end=random2+":00H";
         userx.setReachTime(end);
         int random3 = (int)(Math.random()*((100-20)+1))+20;;

@@ -2,21 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/successMessage"
+android:background="@drawable/gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".RegisterSuccess">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_marginTop="220dp"
+        android:layout_gravity="center"
+        android:id="@+id/runningBus"
+        android:src="@drawable/busrunning"
+        android:layout_width="100dp"
+        android:layout_height="80dp"/>
     <TextView
         android:id="@+id/successMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="registration success" />
+        android:text="Registration success"
+        android:textColor="#FFF"
+        android:textSize="30dp"
+        android:layout_gravity="center"/>
 
     <Button
         android:id="@+id/btnClickHereRegisterSuccess"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="#FFD600"
+        android:text="Login" />
 </LinearLayout>

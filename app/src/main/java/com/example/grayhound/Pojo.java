@@ -7,8 +7,8 @@ public class Pojo {
     private String date;
     private String money;
     private String count;
-    private String reach;
-    private String end;
+    private String reachTime;
+    private String startTime;
 
     public Pojo(String bookingID, String from, String to, String date, String money, String count, String reach, String end) {
         this.bookingID = bookingID;
@@ -17,8 +17,8 @@ public class Pojo {
         this.date = date;
         this.money = money;
         this.count = count;
-        this.reach = reach;
-        this.end = end;
+        this.reachTime = reach;
+        this.startTime = end;
     }
 
     public Pojo() {
@@ -73,18 +73,18 @@ public class Pojo {
     }
 
     public String getReach() {
-        return reach;
+        return reachTime;
     }
 
     public void setReach(String reach) {
-        this.reach = reach;
+        this.reachTime = reach;
     }
 
     public String getEnd() {
-        return end;
+        return startTime;
     }
 
     public void setEnd(String end) {
-        this.end = end;
+        this.startTime = end;
     }
 }

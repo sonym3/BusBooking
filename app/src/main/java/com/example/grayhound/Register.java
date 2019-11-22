@@ -48,20 +48,21 @@ public class Register extends AppCompatActivity {
                 passwordConfirmation =passwordConf.getText().toString();
                 if (!TextUtils.isEmpty(password) && !TextUtils.isEmpty(passwordConfirmation))
                 {
-                    if(password.equals(passwordConfirmation))
-                    {
-                        //smile please
 
-
-                    }
-                    else {
-                        Toast.makeText(getApplicationContext(), "Password mismatch", Toast.LENGTH_LONG).show();
-                        passwordPerson.setText("");
-                        passwordConf.setText("");
-                        return;
-                    }
                 }
 
+                if(password.equals(passwordConfirmation))
+                {
+                    //smile please
+
+
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Password mismatch", Toast.LENGTH_LONG).show();
+                    passwordPerson.setText("");
+                    passwordConf.setText("");
+                    return;
+                }
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
                     return;

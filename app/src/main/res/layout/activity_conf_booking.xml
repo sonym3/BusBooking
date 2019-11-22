@@ -5,18 +5,33 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ConfBooking">
+    tools:context=".ConfBooking"
+    android:background="@drawable/gradient">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_marginTop="220dp"
+        android:layout_gravity="center"
+        android:id="@+id/runningBus"
+        android:src="@drawable/busrunning"
+        android:layout_width="100dp"
+        android:layout_height="80dp"/>
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#FFF"
         android:textSize="30dp"
-        android:text="Booking Success. Click button for your bookings" />
+        android:layout_gravity="center"
+        android:text="Your Booking is confirmed" />
 
     <Button
         android:id="@+id/btnConfBooking"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Booking" />
+        android:text="My Booking"
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="#FFD600"
+        />
+
 </LinearLayout>

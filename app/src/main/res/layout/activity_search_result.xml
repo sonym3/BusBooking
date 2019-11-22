@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".SearchResult">
+    tools:context=".SearchResult"
+    android:background="@drawable/gradient">
 
     <LinearLayout
         android:layout_gravity="center"
@@ -81,7 +82,8 @@
 
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:checked="true"/>
 
 
         <TextView
@@ -116,7 +118,10 @@
 
     <Button
         android:id="@+id/confirmBooking"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_width="220dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:background="#FFD600"
         android:text="Confirm Booking"/>
 </LinearLayout>
